@@ -17,7 +17,7 @@ const Title = ()=>{
 
 const HeaderComponent = ()=>{
     const [title,setTitle]=useState("Food Villa");
-    
+    const [isLogged,setIsLogged] = useState(false);
    return(
        <div className='header'>
            <Title />

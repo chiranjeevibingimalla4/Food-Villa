@@ -14,27 +14,14 @@ const Title = ()=>{
     )};
 
 
-const search = ()=>{
-    return(
-        <div className='search'>
-          <input type="text" className='search-input' placeholder='Search' value={searchInput} onChange={(e)=>{
-              setSearchInput(e.target.value);
-            }} />
-          <button className='search-btn' onClick={()=>{
-            setFilteredRestaurants(filterData(searchInput,allRestaurants));
-            
-          }} >Search</button>
-        </div>
-    )
-}
+
 const HeaderComponent = ()=>{
     const [title,setTitle]=useState("Food Villa");
     
    return(
        <div className='header'>
            <Title />
-           {/*<h1>{title}</h1>*/}
-           {/*<button onClick={()=>{setTitle("Food Hunt")}}>Change Title</button>*/}
+           
            <div className='nav-items'>
                <ul>
                    <li>Home</li>

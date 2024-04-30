@@ -11,9 +11,13 @@
     
 }
 
+.nav-items{
+    display: flex;
+    flex-direction: row;
+}
 .nav-items > ul{
     list-style-type:none;
-    display:flex;
+    display: flex;
 }
 
 .nav-items > ul > li{
@@ -21,6 +25,11 @@
     color:#E72929;
     font-family: "Roboto";
     font-size: 1rem;
+}
+
+.nav-items > ul > li:hover{
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .logo{

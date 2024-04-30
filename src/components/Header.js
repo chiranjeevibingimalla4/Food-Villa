@@ -30,11 +30,12 @@ const HeaderComponent = ()=>{
                    <li>Contact</li>
                    <li>Cart</li>
                </ul>
+               {
+                    (isLogged)?(<button className="login" onClick={()=>{setIsLogged(false)}}>Logout</button>):
+                    (<button className="logout" onClick={()=>{setIsLogged(true)}}>Login</button>)
+               }
            </div>
-           {
-            (isLogged)?(<button onClick={()=>(setIsLogged(true))}>Logout</button>):
-            (<button onClick={()=>(setIsLogged(false))}>Login</button>)
-           }
+           
        </div>
    )
 }

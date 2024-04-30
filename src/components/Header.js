@@ -1,5 +1,5 @@
 import { useState } from "react";
-import imgSrc from './food_villa.png';
+import imgSrc from '../assests/img/food_villa.png';
 
 
 const Title = ()=>{

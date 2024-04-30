@@ -18,6 +18,7 @@ const Title = ()=>{
 const HeaderComponent = ()=>{
     const [title,setTitle]=useState("Food Villa");
     const [isLogged,setIsLogged] = useState(false);
+
    return(
        <div className='header'>
            <Title />
@@ -30,6 +31,10 @@ const HeaderComponent = ()=>{
                    <li>Cart</li>
                </ul>
            </div>
+           {
+            (isLogged)?(<button onClick={()=>(setIsLogged(true))}>Logout</button>):
+            (<button onClick={()=>(setIsLogged(false))}>Login</button>)
+           }
        </div>
    )
 }

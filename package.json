@@ -1,13 +1,15 @@
 {
   "devDependencies": {
+    "@babel/core": "^7.24.5",
     "parcel": "^2.12.0",
     "process": "^0.11.10"
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.23.0"
   },
   "scripts": {
-    "start":"npx parcel index.html"
+    "start": "npx parcel index.html"
   }
 }

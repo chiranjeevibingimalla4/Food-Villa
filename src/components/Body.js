@@ -48,7 +48,7 @@ const Body = () =>{
     return allRestaurants.length===0 ?
     ( 
       <div className='restraunt-list'>
-        {Array.from({ length: 20 }).map((_, index) => (<SkeletonCard key={index} />))}
+        {Array(20).fill("").map((_, index) => (<SkeletonCard key={index} />))}
       </div>
      ):(
       <>

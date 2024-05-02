@@ -1,6 +1,6 @@
 import { useState } from "react";
 import imgSrc from '../assests/img/food_villa.png';
-
+import {Link} from 'react-router-dom';
 
 const Title = ()=>{
     const [url,setURl] = useState();
@@ -25,10 +25,10 @@ const HeaderComponent = ()=>{
            
            <div className='nav-items'>
                <ul>
-                   <li>Home</li>
-                   <li>About</li>
-                   <li>Contact</li>
-                   <li>Cart</li>
+                   <li><Link to="/">Home</Link></li>
+                   <li><Link to="/about">About</Link></li>
+                   <li><Link to="/contact">Contact</Link></li>
+                   <li><Link to="/cart">Cart</Link></li>
                </ul>
                {
                     (isLogged)?(<button className="login" onClick={()=>{setIsLogged(false)}}>Logout</button>):

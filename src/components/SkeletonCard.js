@@ -1,6 +1,6 @@
 import React from 'react';
 import SkeletonElement from './SkeletonElement';    
-import './Shimmer.css';
+import './stylesheets/Shimmer.css';
 
 
 const SkeletonCard = ()=>{

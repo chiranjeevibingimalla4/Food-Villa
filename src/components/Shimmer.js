@@ -1,4 +1,4 @@
-import './Shimmer.css';
+import './stylesheets/Shimmer.css';
 import React from 'react';
 
 

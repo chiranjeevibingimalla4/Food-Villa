@@ -1,5 +1,5 @@
 import React from 'react';
-import './Shimmer.css';
+import './stylesheets/Shimmer.css';
 
 const SkeletonElement = ({type})=>{
     console.log("shimmer ui");

@@ -1,7 +1,7 @@
 import RestaurantCard from './RestaurantCard.js';
 import {useState,useEffect} from 'react';
 import SkeletonCard from './SkeletonCard.js';
-
+import {Link} from 'react-router-dom';
 
 function filterData(searchInput,restaurants){
     
@@ -33,7 +33,7 @@ const Body = () =>{
     }
     
     const json = await response.json();
-
+    console.log(json);
     //initially allReataurants and filteredRestaurant variable are set with api data
     setFilteredRestaurants(json?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);  
     setAllRestaurants(json?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
@@ -67,7 +67,7 @@ const Body = () =>{
           {
             filteredRestaurants.map((restaurant) =>{
               
-              return <RestaurantCard {...restaurant.info} key={restaurant.info.id} />
+              return <Link to={"/res/"+restaurant.info.id} key={restaurant.info.id}><RestaurantCard {...restaurant.info}  /></Link>
             })
           } 
         </div>

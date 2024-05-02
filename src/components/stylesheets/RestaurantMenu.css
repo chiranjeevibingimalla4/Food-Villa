@@ -1,0 +1,21 @@
+.restaurant-header{
+    width: 80%;
+    margin:10px auto;
+}
+
+.restaurant-header > h1{
+    margin:10px 0;
+}
+.restaurant-img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right:20px;
+}
+
+.restaurant-details{
+    display: flex;
+    align-items: center;
+
+}

@@ -5,12 +5,12 @@ import Footer from './components/Footer.js';
 import About from './components/About.js'
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import Errors from "./components/Errors.js";
-import Contact  from './components/Contact.js';
+import Contact from './components/Contact.js';
 import Cart from './components/Cart.js';
-import RestaurantMenu from './RestaurantMenu.js';
+import RestaurantMenu from './components/RestaurantMenu.js';
 
 const App = ()=>{
-    console.error("hello");
+    console.log("hello");
     return(
         <>
             <Header />

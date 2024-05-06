@@ -1,0 +1,77 @@
+[
+  {
+    "card": {
+      "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+      "info": {
+        "id": "123846643",
+        "name": "Slow Churn Guava Ice Cream 500 ML",
+        "category": "Slow Churn Artisanal Ice Cream (Exciting New Flavors)",
+        "description": "Indulge in an artisanal premium icecream made by tenderly and slowly churning fresh milk cream and handpicked real Guava fruit. A delight for dessert and natural fruit lovers. Kcal/Serving: 129",
+        "imageId": "4a1ff9e32503bb232338ac2f6ee298d2",
+        "inStock": 1,
+        "isVeg": 1,
+        "price": 37500,
+        "variants": {},
+        "variantsV2": {},
+        "itemAttribute": { "vegClassifier": "VEG" },
+        "ribbon": {},
+        "type": "ITEM",
+        "itemBadge": {},
+        "badgesV2": {},
+        "ratings": { "aggregatedRating": {} }
+      },
+      "analytics": {},
+      "hideRestaurantDetails": true
+    }
+  },
+  {
+    "card": {
+      "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+      "info": {
+        "id": "123846644",
+        "name": "Slow Churn Chikoo Ice Cream 500 ML",
+        "category": "Slow Churn Artisanal Ice Cream (Exciting New Flavors)",
+        "description": "Handpicked real sweet Chikoo fruit slow churned with fresh milk cream to give a creamy artisanal premium icecream. Best for those who love desserts and natural fruit. Kcal/Serving: 132",
+        "imageId": "f1bf429661e23952d4e6f33f22e7161a",
+        "inStock": 1,
+        "isVeg": 1,
+        "price": 37500,
+        "variants": {},
+        "variantsV2": {},
+        "itemAttribute": { "vegClassifier": "VEG" },
+        "ribbon": {},
+        "type": "ITEM",
+        "itemBadge": {},
+        "badgesV2": {},
+        "ratings": { "aggregatedRating": {} }
+      },
+      "analytics": {},
+      "hideRestaurantDetails": true
+    }
+  },
+  {
+    "card": {
+      "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+      "info": {
+        "id": "123846642",
+        "name": "Slow Churn Mulberry Ice Cream 500 ML",
+        "category": "Slow Churn Artisanal Ice Cream (Exciting New Flavors)",
+        "description": "An artisanal premium icecream made by slowly churning fresh milk cream and handpicked real Mulberry. A delight for dessert and natural fruit lovers. Kcal/Serving: 132",
+        "imageId": "4bc58f2479683be2102e8575bf1d91b8",
+        "inStock": 1,
+        "isVeg": 1,
+        "price": 37500,
+        "variants": {},
+        "variantsV2": {},
+        "itemAttribute": { "vegClassifier": "VEG" },
+        "ribbon": {},
+        "type": "ITEM",
+        "itemBadge": {},
+        "badgesV2": {},
+        "ratings": { "aggregatedRating": {} }
+      },
+      "analytics": {},
+      "hideRestaurantDetails": true
+    }
+  }
+]

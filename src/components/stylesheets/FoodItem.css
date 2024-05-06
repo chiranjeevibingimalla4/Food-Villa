@@ -1,0 +1,32 @@
+.food{
+    width:70%;
+    display: flex;
+    margin:1rem auto;
+    justify-content: space-between;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 10px;
+    border-radius: 1rem;
+}
+
+.food-name{
+    font-size: 1.5rem;
+    font-weight: 800px;
+}
+
+.food-price, .food-description, .food-rating{
+    font-size: 14px;
+    font-weight: 12px;
+}
+
+
+.food-image{
+    width:150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.line{
+    width: 60%;
+    margin: auto;
+}

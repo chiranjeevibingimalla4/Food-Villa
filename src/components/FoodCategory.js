@@ -7,7 +7,7 @@ const FoodCategory = ({title,itemCards})=>{
     
     return(
         <>
-            <div>Category:{title}</div>
+            {/* <div>Category:{title}</div> */}
             {itemCards.map((itemCard)=>{
                 return <FoodItem info={itemCard.card.info} key={itemCard.card.info.id} />
             })}

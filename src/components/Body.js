@@ -2,7 +2,7 @@ import RestaurantCard from './RestaurantCard.js';
 import {useState,useEffect} from 'react';
 import SkeletonCard from './SkeletonCard.js';
 import {Link} from 'react-router-dom';
-
+// import useOnline from '../utils/useOnline.js';
 function filterData(searchInput,restaurants){
     
     const data = restaurants.filter((restaurant)=>{
@@ -44,6 +44,8 @@ const Body = () =>{
     } 
   
   }
+  
+  
     
     return allRestaurants.length===0 ?
     ( 

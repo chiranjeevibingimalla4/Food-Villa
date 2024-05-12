@@ -10,13 +10,24 @@
 
 .food-name{
     font-size: 1.5rem;
-    font-weight: 800px;
+    font-weight: 800;
+    padding: 5px 0;
+}
+
+.food-description{
+    width: 600px;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    
 }
 
 .food-price, .food-description, .food-rating{
     font-size: 14px;
-    font-weight: 12px;
+    font-weight: normal;
+    padding:3px 0;
 }
+
 
 
 .food-image{

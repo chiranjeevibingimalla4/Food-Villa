@@ -8,9 +8,29 @@ import Errors from "./components/Errors.js";
 import Contact from './components/Contact.js';
 import Cart from './components/Cart.js';
 import RestaurantMenu from './components/RestaurantMenu.js';
+import Profile from './components/ProfileClass.js';
+import useOnline from './utils/useOnline.js';
 
+import imgNoIntenet from './assests/img/noInternet.gif';
+import { useState,useEffect } from 'react';
 const App = ()=>{
-    console.log("hello");
+    const isOnline = useOnline();
+    const [imageLoaded,setImageLoaded] = useState(false);
+
+    useEffect(()=>{
+        const noInternetImg = new Image();
+        noInternetImg.src = imgNoIntenet;
+        noInternetImg.onload = ()=>{setImageLoaded(true)}
+    },[])
+    
+  if(!isOnline){
+    return (
+         <>
+            
+            {(imageLoaded)?(<img style={{width: "100vw",height: "100vh",objectFit:"contain"}} src={imgNoIntenet} alt='no-internet-img' />):(<h1>Opps no internet connection</h1>)}
+         </>
+    )
+  }
     return(
         <>
             <Header />
@@ -24,7 +44,7 @@ const appRouter = createBrowserRouter([
     {
         path:"/",
         element:<App />,
-        errorElement:<Error />,
+        errorElement:<Errors />,
         children:[
             {
                 path:"/",
@@ -32,7 +52,13 @@ const appRouter = createBrowserRouter([
             },
             {
                 path:"/about",
-                element:<About />
+                element:<About />,
+                children:[
+                    {
+                        path:"profile",
+                        element:<Profile />
+                    }
+                ]
             },
             {
                 path:"/contact",

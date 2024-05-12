@@ -15,23 +15,13 @@ import imgNoIntenet from './assests/img/noInternet.gif';
 import { useState,useEffect } from 'react';
 const App = ()=>{
     const isOnline = useOnline();
-    const [imageLoaded,setImageLoaded] = useState(false);
-
-    useEffect(()=>{
-        const noInternetImg = new Image();
-        noInternetImg.src = imgNoIntenet;
-        noInternetImg.onload = ()=>{setImageLoaded(true)}
-    },[])
-    
-  if(!isOnline){
-    return (
-         <>
-            
-            {(imageLoaded)?(<img style={{width: "100vw",height: "100vh",objectFit:"contain"}} src={imgNoIntenet} alt='no-internet-img' />):(<h1>Opps no internet connection</h1>)}
-         </>
-    )
-  }
-    return(
+  
+    return (!isOnline)?
+    (
+        <>
+           <h1>Opps no internet connection</h1>
+        </>
+    ):(
         <>
             <Header />
             <Outlet />

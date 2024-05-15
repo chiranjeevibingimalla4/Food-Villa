@@ -10,14 +10,15 @@ import Cart from './components/Cart.js';
 import RestaurantMenu from './components/RestaurantMenu.js';
 import Profile from './components/ProfileClass.js';
 import useOnline from './utils/useOnline.js';
+import Shimmer from './components/Shimmer.js';
+import { lazy, Suspense } from 'react';
+const Instamart = lazy(()=>import("./components/Instamart.js"))
 
-import imgNoIntenet from './assests/img/noInternet.gif';
-import { useState,useEffect } from 'react';
+
 const App = ()=>{
     const isOnline = useOnline();
   
-    return (!isOnline)?
-    (
+    return (!isOnline)?(
         <>
            <h1>Opps no internet connection</h1>
         </>
@@ -61,6 +62,10 @@ const appRouter = createBrowserRouter([
             { 
                 path:"/res/:id",
                 element:<RestaurantMenu />
+            },
+            {
+                path:"/instamart",
+                element: (<Suspense fallback={<h1>Loading...</h1>}><Instamart /></Suspense>)
             }
         ]
     }

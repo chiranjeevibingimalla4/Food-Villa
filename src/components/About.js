@@ -3,7 +3,7 @@ import {Outlet} from 'react-router-dom';
 import React from 'react';
 import Profile from './Profile';
 
-
+// react class - components
 class About extends React.Component{
     constructor(props){
         super(props);

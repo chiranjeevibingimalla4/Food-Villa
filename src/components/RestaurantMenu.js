@@ -1,8 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import SkeletonCard from "./SkeletonCard.js";
-import { IMG_CDN_URL } from "../config.js";
-import "./stylesheets/RestaurantMenu.css";
 import FoodCategory from "./FoodCategory.js";
 import useRestaurant from "./useRestaurant.js";
 
@@ -32,25 +30,19 @@ const RestaurantMenu = () => {
     <SkeletonCard />
   ) : (
     <>
-      <div className="restaurant-header">
-        <h1>{restaurantInfo.name} </h1>
-        <div className="restaurant-details">
-          <img
-            className="restaurant-img"
-            src={IMG_CDN_URL + restaurantInfo.cloudinaryImageId}
-          />
-          <div>
-            <p>
-              &#9734; {restaurantInfo.avgRating} (
+      <div className="restaurant-header flex flex-col w-1/3 my-3 mx-auto p-2 border-solid rounded-xl border-8 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]">
+        <div className="my-3 text-2xl font-bold underline mx-auto">{restaurantInfo.name} </div>
+        <div className="mx-auto">
+        <p>
+              <span className="text-green-500 font-bold">&#9734;</span> {restaurantInfo.avgRating} (
               {restaurantInfo.totalRatingsString}) &#183;{" "}
               {restaurantInfo.costForTwoMessage}{" "}
             </p>
             <p>{restaurantInfo.areaName + ", " + restaurantInfo.city}</p>
             <p>{restaurantInfo.cuisines.join(", ")}</p>
-          </div>
         </div>
-      </div>
-      {/* <div>Food category is below</div> */}
+            
+        </div>
       <div>{printMenu(menu)}</div>
     </>
   );

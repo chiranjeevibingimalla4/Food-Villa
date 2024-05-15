@@ -3,8 +3,14 @@ import {useState,useEffect} from 'react';
 const useOnline = ()=>{
     const [isOnline,setIsOnline] = useState(true);
     useEffect(()=>{
-        window.addEventListener('online',()=>{setIsOnline(true)});
-        window.addEventListener('offline',()=>{setIsOnline(false)});
+        handleOnline = ()=>{setIsOnline(true)};
+        handleOffline = ()=>{setIsOnline(false)};
+        window.addEventListener('online',handleOnline);
+        window.addEventListener('offline',handleOffline);
+        return ()=>{
+            window.removeEventListener('online',handleOnline);
+            window.removeEventListener("offline",handleOffline);  
+        }
     },[]);
 
     return isOnline;

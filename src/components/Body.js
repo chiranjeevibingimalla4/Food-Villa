@@ -29,7 +29,6 @@ const Body = () =>{
 
     if(!response.ok){
       throw new Error(`API request failed with the status:${response.status}`);
-      
     }
     
     const json = await response.json();
@@ -40,7 +39,6 @@ const Body = () =>{
     }
     catch(error){
       console.error("Error Fetching Restaurants:",error);
-
     } 
   
   }
@@ -49,27 +47,27 @@ const Body = () =>{
     
     return allRestaurants.length===0 ?
     ( 
-      <div className='restraunt-list'>
+      <div className='restraunt-list flex flex-wrap w-5/6 mx-auto gap-x-6 gap-y-6'>
         {Array(20).fill("").map((_, index) => (<SkeletonCard key={index} />))}
       </div>
      ):(
       <>
         
-        <div className='search'>
-          <input type="text" className='search-input' placeholder='Search' value={searchInput} onChange={(e)=>{
+        <div className='search flex justify-center my-4'>
+          <input type="text" className= 'p-2 mx-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg' placeholder='Search' value={searchInput} onChange={(e)=>{
               setSearchInput(e.target.value);
             }} />
-          <button className='search-btn' onClick={()=>{
+          <button className='search-btn inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-red-500 border border-red-500 rounded-md shadow-sm hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500' onClick={()=>{
             setFilteredRestaurants(filterData(searchInput,allRestaurants));
             
           }} >Search</button>
         </div>
 
-        <div className='restraunt-list'>
+        <div className='restraunt-list flex flex-wrap justify-center w-10/12 mx-auto gap-x-5 gap-y-6'>
           {
             filteredRestaurants.map((restaurant) =>{
               
-              return <Link to={"/res/"+restaurant.info.id} key={restaurant.info.id}><RestaurantCard {...restaurant.info}  /></Link>
+              return <Link className='' to={"/res/"+restaurant.info.id} key={restaurant.info.id}><RestaurantCard {...restaurant.info}  /></Link>
             })
           } 
         </div>

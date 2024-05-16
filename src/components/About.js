@@ -2,7 +2,7 @@ import {Outlet} from 'react-router-dom';
 // import Profile from './ProfileClass.js';
 import React from 'react';
 import Profile from './Profile';
-
+import SkeletonCard from './SkeletonCard';
 // react class - components
 class About extends React.Component{
     constructor(props){
@@ -20,6 +20,7 @@ render(){
             <h1>This is About page</h1>
             <Outlet />
             <Profile  />
+            <SkeletonCard />
             
         </>
     )

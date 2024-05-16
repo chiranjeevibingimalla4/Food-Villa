@@ -10,7 +10,6 @@ import Cart from './components/Cart.js';
 import RestaurantMenu from './components/RestaurantMenu.js';
 import Profile from './components/ProfileClass.js';
 import useOnline from './utils/useOnline.js';
-import Shimmer from './components/Shimmer.js';
 import { lazy, Suspense } from 'react';
 const Instamart = lazy(()=>import("./components/Instamart.js"))
 

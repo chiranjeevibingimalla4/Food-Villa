@@ -1,6 +1,3 @@
-// import React from 'react';
-// import SkeletonElement from './SkeletonElement';    
-// import './stylesheets/Shimmer.css';
 
 const SkeletonElement = ({style})=>{
     const classes = style;

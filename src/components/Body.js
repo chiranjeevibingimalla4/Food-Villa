@@ -47,7 +47,7 @@ const Body = () =>{
     
     return allRestaurants.length===0 ?
     ( 
-      <div className='restraunt-list flex flex-wrap w-5/6 mx-auto gap-x-6 gap-y-6'>
+      <div className='restraunt-list flex flex-wrap w-5/6 mx-auto my-6 gap-x-6 gap-y-6'>
         {Array(20).fill("").map((_, index) => (<SkeletonCard key={index} />))}
       </div>
      ):(

@@ -16,8 +16,9 @@ const type = {
 
 const SkeletonFoodItem = ()=>{
     return(
-        <div className="animate-pulse  w-52 p-3 border-gray-300 border rounded-xl">
-
+        <div className="animate-pulse flex justify-between w-7/12 p-4 border-gray-300 border rounded-xl">
+            <div></div>
+            <div></div>
         </div>
     );
 }

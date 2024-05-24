@@ -8,7 +8,7 @@ import useRestaurant from "./useRestaurant.js";
 const RestaurantMenu = () => {
   const { id } = useParams();
   const [restaurantInfo,menu] = useRestaurant(id);
-  console.log(menu);
+
   function printMenu(menu) {
     
     for (let i = 2; i < menu.length - 2; i++) {

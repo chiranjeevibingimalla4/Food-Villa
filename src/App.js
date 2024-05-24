@@ -10,22 +10,33 @@ import Cart from './components/Cart.js';
 import RestaurantMenu from './components/RestaurantMenu.js';
 import Profile from './components/ProfileClass.js';
 import useOnline from './utils/useOnline.js';
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense,useState } from 'react';
+import UserContext from './utils/UserContext.js';
+import { Provider} from 'react-redux';
+import store from './utils/store.js';
 const Instamart = lazy(()=>import("./components/Instamart.js"))
 
 
 const App = ()=>{
     const isOnline = useOnline();
-  
+    const [user,setUser] = useState({
+            name:"Chiru",
+            email:"bingimalla4@gmail.com"
+        },
+    )
     return (!isOnline)?(
         <>
            <h1>Opps no internet connection</h1>
         </>
     ):(
         <>
-            <Header />
-            <Outlet />
-            <Footer />
+            <Provider store={store}>
+                <UserContext.Provider value={{user:user,setUser:setUser}}>
+                    <Header />
+                    <Outlet />
+                    <Footer />
+                </UserContext.Provider>
+            </Provider>
         </>
     )
 }

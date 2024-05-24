@@ -1,6 +1,8 @@
 import { useState } from "react";
 import imgSrc from '../assests/img/food_villa.png';
 import {Link} from 'react-router-dom';
+import { useSelector } from "react-redux";
+import store from "../utils/store";
 
 const Title = ()=>{
     const [url,setURl] = useState();
@@ -18,7 +20,7 @@ const Title = ()=>{
 const HeaderComponent = ()=>{
     const [title,setTitle]=useState("Food Villa");
     const [isLogged,setIsLogged] = useState(false);
-
+    const cartItems = useSelector(store => store.cart.items);
    return(
        <div className='header flex justify-between items-center bg-yellow-100'>
            <Title />
@@ -29,7 +31,7 @@ const HeaderComponent = ()=>{
                    <li className="p-3 text-red-600 font-serif text-base hover:cursor-pointer hover:underline"><Link to="/instamart">Instamart</Link></li>
                    <li className="p-3 text-red-600 font-serif text-base hover:cursor-pointer hover:underline"><Link to="/about">About</Link></li>
                    <li className="p-3 text-red-600 font-serif text-base hover:cursor-pointer hover:underline"><Link to="/contact">Contact</Link></li>
-                   <li className="p-3 text-red-600 font-serif text-base hover:cursor-pointer hover:underline"><Link to="/cart">Cart</Link></li>
+                   <li className="p-3 text-red-600 font-serif text-base hover:cursor-pointer hover:underline"><Link to="/cart">Cart- {cartItems.length}</Link></li>
                </ul>
                {
                     (isLogged)?(<button className="login" onClick={()=>{setIsLogged(false)}}>Logout</button>):

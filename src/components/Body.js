@@ -1,8 +1,10 @@
 import RestaurantCard from './RestaurantCard.js';
-import {useState,useEffect} from 'react';
+import {useState,useEffect,useContext} from 'react';
 import SkeletonCard from './SkeletonCard.js';
 import {Link} from 'react-router-dom';
-// import useOnline from '../utils/useOnline.js';
+import UserContext from '../utils/UserContext.js';
+
+
 function filterData(searchInput,restaurants){
     
     const data = restaurants.filter((restaurant)=>{
@@ -18,8 +20,8 @@ function filterData(searchInput,restaurants){
 const Body = () =>{
   const [searchInput,setSearchInput] = useState("");
   const [filteredRestaurants,setFilteredRestaurants] = useState([]);    
-  const [allRestaurants, setAllRestaurants] = useState([]);
-
+  const [allRestaurants, setAllRestaurants] = useState([]); 
+  const {user,setUser} = useContext(UserContext);
   // useEffect(()=>{setTimeout(getRestaurants(),5000)},[]);
   useEffect(()=>{getRestaurants()},[]);  
 
@@ -32,7 +34,7 @@ const Body = () =>{
     }
     
     const json = await response.json();
-    console.log(json);
+    // console.log(json);
     //initially allReataurants and filteredRestaurant variable are set with api data
     setFilteredRestaurants(json?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);  
     setAllRestaurants(json?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
@@ -52,7 +54,7 @@ const Body = () =>{
       </div>
      ):(
       <>
-        
+        <div className='my-2 mx-4 text-xl font-bold'>Hey, {user.name} What's on your mind?</div>
         <div className='search flex justify-center my-4'>
           <input type="text" className= 'p-2 mx-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg' placeholder='Search' value={searchInput} onChange={(e)=>{
               setSearchInput(e.target.value);
@@ -61,8 +63,10 @@ const Body = () =>{
             setFilteredRestaurants(filterData(searchInput,allRestaurants));
             
           }} >Search</button>
+          <input className='p-2 mx-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg'  value={user.name} onChange={(e)=>{setUser({...user,name:e.target.value,})}} />
+          <input className='p-2 mx-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg'  value={user.email} onChange={(e)=>{setUser({...user,email:e.target.value,})}} />
         </div>
-
+        
         <div className='restraunt-list flex flex-wrap justify-center w-10/12 mx-auto gap-x-5 gap-y-6'>
           {
             filteredRestaurants.map((restaurant) =>{

@@ -1,4 +1,4 @@
-
+import React from "react";
 const SkeletonElement = ({style})=>{
     const classes = style;
     return(

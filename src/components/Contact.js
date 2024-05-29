@@ -1,5 +1,5 @@
 // import noInternet from '../assests/img/noInternet.gif';
-
+import React from "react";
 const Contact = ()=>{
     return (
         <>

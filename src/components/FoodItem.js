@@ -1,7 +1,7 @@
 import { IMG_CDN_URL } from "../config.js";
 import { addItem } from "../utils/cartSlice.js";
 import { useDispatch } from "react-redux";
-
+import React from "react";
 const FoodItem = (props)=>{
     // console.log("Food Item: props");
     

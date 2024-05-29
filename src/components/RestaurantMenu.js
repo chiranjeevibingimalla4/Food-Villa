@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import React,{ useState, useEffect } from "react";
 import SkeletonCard from "./SkeletonCard.js";
 import FoodCategory from "./FoodCategory.js";
 import useRestaurant from "./useRestaurant.js";

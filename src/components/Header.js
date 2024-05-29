@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React,{ useState } from "react";
 import imgSrc from '../assests/img/food_villa.png';
 import {Link} from 'react-router-dom';
 import { useSelector } from "react-redux";
@@ -9,7 +9,7 @@ const Title = ()=>{
     return (
         <div className="flex items-center font-sans text-red-600">
             
-            <img  className="w-20 p-2 object-contain hover:scale-105" src={imgSrc} alt="logo" />
+            <img data-testid="logo" className="w-20 p-2 object-contain hover:scale-105" src={imgSrc} alt="logo" />
             <a href="/" className="text-red-600 text-2xl hover:scale-105">
                     Food Villa
             </a>
@@ -31,11 +31,11 @@ const HeaderComponent = ()=>{
                    <li className="p-3 text-red-600 font-serif text-base hover:cursor-pointer hover:underline"><Link to="/instamart">Instamart</Link></li>
                    <li className="p-3 text-red-600 font-serif text-base hover:cursor-pointer hover:underline"><Link to="/about">About</Link></li>
                    <li className="p-3 text-red-600 font-serif text-base hover:cursor-pointer hover:underline"><Link to="/contact">Contact</Link></li>
-                   <li className="p-3 text-red-600 font-serif text-base hover:cursor-pointer hover:underline"><Link to="/cart">Cart- {cartItems.length}</Link></li>
+                   <li className="p-3 text-red-600 font-serif text-base hover:cursor-pointer hover:underline"><Link data-testid="cart" to="/cart">Cart- {cartItems.length}</Link></li>
                </ul>
                {
-                    (isLogged)?(<button className="login" onClick={()=>{setIsLogged(false)}}>Logout</button>):
-                    (<button className="logout" onClick={()=>{setIsLogged(true)}}>Login</button>)
+                    (isLogged)?(<button data-testid="auth" className="login" onClick={()=>{setIsLogged(false)}}>Logout</button>):
+                    (<button data-testid="auth" className="logout" onClick={()=>{setIsLogged(true)}}>Login</button>)
                }
            </div>
            

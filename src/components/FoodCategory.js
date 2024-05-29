@@ -1,5 +1,5 @@
 import FoodItem from "./FoodItem.js";
-
+import React from "react";
 const FoodCategory = ({title,itemCards})=>{
     // console.log("Food category");
     // console.log("title: "+title);

@@ -1,3 +1,4 @@
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Body from './components/Body.js';
 import Header from './components/Header.js';
@@ -14,6 +15,8 @@ import { lazy, Suspense,useState } from 'react';
 import UserContext from './utils/UserContext.js';
 import { Provider} from 'react-redux';
 import store from './utils/store.js';
+
+// import dummyLogo from './mocks/dummyLogo.js';
 const Instamart = lazy(()=>import("./components/Instamart.js"))
 
 

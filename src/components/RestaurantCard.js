@@ -1,5 +1,5 @@
 import { IMG_CDN_URL } from '../config';
-import { useContext } from 'react';
+import React,{ useContext } from 'react';
 import UserContext from '../utils/UserContext';
 
 const RestaurantCard = ({name,avgRating,cloudinaryImageId,cuisines})=>{

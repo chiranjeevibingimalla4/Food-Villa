@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { IMG_CDN_URL } from "../config";
 import {useDispatch} from "react-redux";
 import { clearCart } from "../utils/cartSlice";
-
+import React from "react";
 const CartItem = ({name,price,
     defaultPrice, imageId})=>{
     return(

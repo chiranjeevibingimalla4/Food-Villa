@@ -3,6 +3,8 @@ import React,{useState,useEffect,useContext} from 'react';
 import SkeletonCard from './SkeletonCard.js';
 import {Link} from 'react-router-dom';
 import UserContext from '../utils/UserContext.js';
+import { DATA_URL } from '../config.js';
+import Footer from './Footer.js';
 
 function filterData(searchInput,restaurants){
     
@@ -12,7 +14,7 @@ function filterData(searchInput,restaurants){
     });
     
     return data;
- 
+
 }
 
 
@@ -26,7 +28,7 @@ const Body = () =>{
 
   async function getRestaurants(){
     try{
-    const response = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9488237&lng=80.2364283&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+    const response = await fetch(DATA_URL);
 
     if(!response.ok){
       throw new Error(`API request failed with the status:${response.status}`);
@@ -47,12 +49,14 @@ const Body = () =>{
   
     
     return allRestaurants.length===0 ?
-    ( 
+    (
+      
       <div data-testid="shimmer" className='restraunt-list flex flex-wrap w-5/6 mx-auto my-6 gap-x-6 gap-y-6'>
         {Array(20).fill("").map((_, index) => (<SkeletonCard key={index} />))}
       </div>
      ):(
-      <>
+    <>
+      <div className='my-12'>
         <div className='my-2 mx-4 text-xl font-bold'>Hey, {user.name} What's on your mind?</div>
         <div className='search flex justify-center my-4'>
           <input type="text" className= 'p-2 mx-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg' placeholder='Search' value={searchInput} onChange={(e)=>{
@@ -74,8 +78,9 @@ const Body = () =>{
             })
           } 
         </div>
-      </>
-    
+      </div>
+      <Footer />
+    </>
   );
   }
   export default Body;

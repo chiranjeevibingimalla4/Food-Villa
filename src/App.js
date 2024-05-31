@@ -37,7 +37,6 @@ const App = ()=>{
                 <UserContext.Provider value={{user:user,setUser:setUser}}>
                     <Header />
                     <Outlet />
-                    <Footer />
                 </UserContext.Provider>
             </Provider>
         </>

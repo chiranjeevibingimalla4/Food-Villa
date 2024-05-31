@@ -2,7 +2,7 @@ import {Outlet} from 'react-router-dom';
 // import Profile from './ProfileClass.js';
 import React from 'react';
 import Profile from './Profile';
-import SkeletonCard from './SkeletonCard';
+import {SkeletonFoodItem} from './SkeletonCard';
 import UserContext from '../utils/UserContext';
 
 
@@ -24,7 +24,6 @@ render(){
                 
                 <Outlet />
                 <Profile  />
-                <SkeletonCard />
             
         </>
     )

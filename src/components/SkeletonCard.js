@@ -11,14 +11,25 @@ const SkeletonElement = ({style})=>{
 const type = {
     "restaurantImg":"w-44 h-36 mx-auto my-1 bg-gray-200 rounded-xl",
     "textSmall":"w-1/5 h-4 mx-2 my-2 bg-gray-200 rounded-sm",
-    "text":"w-4/5 h-8 mx-2 bg-gray-200 rounded-sm",
+    "text":"w-4/5 h-8 mx-2 py-2 my-2 bg-gray-200 rounded-sm",
+    "dishImg":"w-24 h-16 mx-auto my-1 bg-gray-200 rounded-xl",
+    "dishText":"w-7/12 h-6 mx-2 py-2 my-2 bg-gray-200 rounded-sm",
+    "dishTextSmall":"w-2/12 h-4 mx-2 my-2 bg-gray-200 rounded-sm"
 }
 
-const SkeletonFoodItem = ()=>{
+export const SkeletonFoodItem = ()=>{
     return(
-        <div className="animate-pulse flex justify-between w-7/12 p-4 border-gray-300 border rounded-xl">
-            <div></div>
-            <div></div>
+        <div className="animate-pulse flex justify-between mx-auto my-2 w-3/5 p-4 border-gray-300 border rounded-xl">
+            <div className="w-4/5">
+                <SkeletonElement style="w-6/12 h-6 mx-2 py-2 my-2 bg-gray-200 rounded-sm" />
+                <SkeletonElement style="w-1/12 h-4 mx-2 my-2 bg-gray-200 rounded-sm" />
+                <SkeletonElement style="w-2/12 h-4 mx-2 my-2 bg-gray-200 rounded-sm" />
+                <SkeletonElement style="w-7/12 h-4 mx-2 py-2 my-2 bg-gray-200 rounded-sm" />
+                
+            </div>
+            <div className="w-1/5">
+                <SkeletonElement style="w-full h-full mx-auto my-1 bg-gray-200 rounded-xl" />
+            </div>
         </div>
     );
 }

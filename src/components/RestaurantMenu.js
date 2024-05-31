@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import React,{ useState, useEffect } from "react";
-import SkeletonCard from "./SkeletonCard.js";
+import {SkeletonFoodItem} from "./SkeletonCard.js";
 import FoodCategory from "./FoodCategory.js";
 import useRestaurant from "./useRestaurant.js";
 
@@ -15,7 +15,7 @@ const RestaurantMenu = () => {
       const cate = menu[i];
       if (cate?.card?.card?.itemCards) {
         // const a = cate?.card?.card?.itemCards;
-        return (
+        return(
           <FoodCategory
             title={cate?.card?.card?.title}
             itemCards={cate?.card?.card?.itemCards}
@@ -27,8 +27,8 @@ const RestaurantMenu = () => {
   }
 
   return !restaurantInfo ? (
-    <SkeletonCard />
-  ) : (
+  <div className="flex flex-col">{Array(10).fill("").map((_,index)=>{return <SkeletonFoodItem key={index} />})}</div>
+    ) : (
     <>
       <div className="restaurant-header flex flex-col w-1/3 my-3 mx-auto p-2 border-solid rounded-xl border-8 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]">
         <div className="my-3 text-2xl font-bold underline mx-auto">{restaurantInfo.name} </div>
